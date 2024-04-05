@@ -27,9 +27,10 @@ class UserService {
         }
     }
 
-    create(userDTO) {
+    create(userData) {
+        console.log(userData)
         const user = new User(
-            uuidv4(), ...Object.values(userDTO))
+            uuidv4(), ...Object.values(userData))
         users.push(user)
         return new UserDTO(user)
     }
