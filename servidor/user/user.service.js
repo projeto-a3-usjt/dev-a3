@@ -27,8 +27,23 @@ class UserService {
         }
     }
 
+    /* assumindo que não tenha problema em 
+       esperar que a requisição seja 100%
+       correta todo tempo por enquanto */
+    // parametros = ['username', 'senha', 'nome', 'tipo']
     create(userData) {
-        console.log(userData)
+        // for (let param of this.parametros) {
+        //     if (!userData[param]) {
+        //         throw new Error("Requisição inválida")
+        //     }
+        // }
+        // if (userData.tipo !== 0 && userData.tipo !== 1) {
+        //     throw new Error("Requisição inválida")
+        // }
+        if (users.find((user) => user.username === userData.username)) {
+            throw new Error("Usuário já existe")
+        }
+
         const user = new User(
             uuidv4(), ...Object.values(userData))
         users.push(user)
