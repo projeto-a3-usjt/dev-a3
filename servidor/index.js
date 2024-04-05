@@ -21,7 +21,7 @@ app.get('/admin/cadastros', (req, res) => {
 })
 
 app.post('/admin/cadastros', (req, res) => {
-    // espera um JSON com username, senha e tipo
+    // espera um JSON com username, senha, tipo e nome
     userController.cadastraUsuário(req, res)
 })
 
