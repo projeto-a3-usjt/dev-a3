@@ -6,13 +6,9 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "polished": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "socket.io": "^4.7.5",
-    "socket.io-client": "^4.7.5",
-    "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
