@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Cardapio } from "./Cardapio";
-import { QrCodes } from "./QrCodes";
+import { QrCodesEntity } from "../../src/QrCode/qrCode.entity";
 
 @Index("FK_qr_itens_cardápio", ["idPrato"], {})
 @Index("FK_qr_itens_qr_codes", ["idQr"], {})
@@ -29,10 +29,10 @@ export class QrItens {
   @JoinColumn([{ name: "id_prato", referencedColumnName: "idPrato" }])
   idPrato2: Cardapio;
 
-  @ManyToOne(() => QrCodes, (qrCodes) => qrCodes.qrItens, {
+  @ManyToOne(() => QrCodesEntity, (qrCodes) => qrCodes.qrItens, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_qr", referencedColumnName: "idQr" }])
-  idQr2: QrCodes;
+  idQr2: QrCodesEntity;
 }

@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany } from "typeorm";
-import { Mesas } from "./Mesas";
+import { MesaEntity } from "../../src/mesa/mesa.entity";
 
 @Entity("cadastros", { schema: "projtest" })
 export class Cadastros {
@@ -9,6 +9,7 @@ export class Cadastros {
     comment: "UUID",
     length: 36,
   })
+
   idUsuario: string;
 
   @Column("varchar", { name: "username", length: 32 })
@@ -23,6 +24,7 @@ export class Cadastros {
   @Column("bit", { name: "tipo_conta", default: () => "'0'" })
   tipoConta: boolean;
 
-  @OneToMany(() => Mesas, (mesas) => mesas.idGarcom2)
-  mesas: Mesas[];
+  @OneToMany(() => MesaEntity, (mesas) => mesas.idGarcom2)
+  mesas: MesaEntity[];
+  
 }
