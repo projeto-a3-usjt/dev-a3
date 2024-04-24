@@ -16,23 +16,17 @@ export class QrItens {
   @PrimaryGeneratedColumn({ type: "int", name: "id", unsigned: true })
   id: number;
 
-  @Column("smallint", { name: "id_prato", unsigned: true })
-  idPrato: number;
-
-  @Column("int", { name: "id_qr", unsigned: true })
-  idQr: number;
-
   @ManyToOne(() => Cardapio, (cardapio) => cardapio.qrItens, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_prato", referencedColumnName: "idPrato" }])
-  idPrato2: Cardapio;
+  idPrato: Cardapio;
 
   @ManyToOne(() => QrCodes, (qrCodes) => qrCodes.qrItens, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_qr", referencedColumnName: "idQr" }])
-  idQr2: QrCodes;
+  idQr: QrCodes;
 }

@@ -36,19 +36,16 @@ export class Cardapio {
   })
   preO: string | null;
 
-  @Column("tinyint", { name: "id_tipo", unsigned: true })
-  idTipo: number;
-
   @ManyToOne(() => TipoPrato, (tipoPrato) => tipoPrato.cardapios, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_tipo", referencedColumnName: "idTipo" }])
-  idTipo2: TipoPrato;
+  idTipo: TipoPrato;
 
-  @OneToMany(() => PratoOpcoes, (pratoOpcoes) => pratoOpcoes.idPrato2)
+  @OneToMany(() => PratoOpcoes, (pratoOpcoes) => pratoOpcoes.idPrato)
   pratoOpcoes: PratoOpcoes[];
 
-  @OneToMany(() => QrItens, (qrItens) => qrItens.idPrato2)
+  @OneToMany(() => QrItens, (qrItens) => qrItens.idPrato)
   qrItens: QrItens[];
 }

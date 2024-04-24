@@ -23,6 +23,6 @@ export class Cadastros {
   @Column("bit", { name: "tipo_conta", default: () => "'0'" })
   tipoConta: boolean;
 
-  @OneToMany(() => Mesas, (mesas) => mesas.idGarcom2)
+  @OneToMany(() => Mesas, (mesas) => mesas.idGarcom)
   mesas: Mesas[];
 }

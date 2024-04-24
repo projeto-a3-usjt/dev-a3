@@ -26,6 +26,6 @@ export class Mesas {
   @JoinColumn([{ name: "id_garcom", referencedColumnName: "idUsuario" }])
   idGarcom2: Cadastros;
 
-  @OneToMany(() => QrCodes, (qrCodes) => qrCodes.idMesa2)
+  @OneToMany(() => QrCodes, (qrCodes) => qrCodes.idMesa)
   qrCodes: QrCodes[];
 }

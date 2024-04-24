@@ -19,10 +19,10 @@ export class OpcoesPratoIndex {
 
   @OneToMany(
     () => OpcoesPratoOpcoes,
-    (opcoesPratoOpcoes) => opcoesPratoOpcoes.idOpcaoIndex2
+    (opcoesPratoOpcoes) => opcoesPratoOpcoes.idOpcaoIndex
   )
   opcoesPratoOpcoes: OpcoesPratoOpcoes[];
 
-  @OneToMany(() => PratoOpcoes, (pratoOpcoes) => pratoOpcoes.idOpcaoIndex2)
+  @OneToMany(() => PratoOpcoes, (pratoOpcoes) => pratoOpcoes.idOpcaoIndex)
   pratoOpcoes: PratoOpcoes[];
 }

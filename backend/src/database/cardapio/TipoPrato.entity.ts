@@ -9,6 +9,6 @@ export class TipoPrato {
   @Column("varchar", { name: "nome", length: 32 })
   nome: string;
 
-  @OneToMany(() => Cardapio, (cardapio) => cardapio.idTipo2)
+  @OneToMany(() => Cardapio, (cardapio) => cardapio.idTipo)
   cardapios: Cardapio[];
 }

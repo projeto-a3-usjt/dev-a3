@@ -16,18 +16,12 @@ export class PratoOpcoes {
   @PrimaryGeneratedColumn({ type: "smallint", name: "id", unsigned: true })
   id: number;
 
-  @Column("smallint", { name: "id_prato", unsigned: true })
-  idPrato: number;
-
-  @Column("smallint", { name: "id_opcao_index", unsigned: true })
-  idOpcaoIndex: number;
-
   @ManyToOne(() => Cardapio, (cardapio) => cardapio.pratoOpcoes, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_prato", referencedColumnName: "idPrato" }])
-  idPrato2: Cardapio;
+  idPrato: Cardapio;
 
   @ManyToOne(
     () => OpcoesPratoIndex,
@@ -37,5 +31,5 @@ export class PratoOpcoes {
   @JoinColumn([
     { name: "id_opcao_index", referencedColumnName: "idOpcaoIndex" },
   ])
-  idOpcaoIndex2: OpcoesPratoIndex;
+  idOpcaoIndex: OpcoesPratoIndex;
 }

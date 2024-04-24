@@ -18,9 +18,6 @@ export class OpcoesPratoOpcoes {
   })
   idOpcao: number;
 
-  @Column("smallint", { name: "id_opcao_index", unsigned: true })
-  idOpcaoIndex: number;
-
   @Column("varchar", { name: "opcao", length: 64 })
   opcao: string;
 
@@ -32,5 +29,5 @@ export class OpcoesPratoOpcoes {
   @JoinColumn([
     { name: "id_opcao_index", referencedColumnName: "idOpcaoIndex" },
   ])
-  idOpcaoIndex2: OpcoesPratoIndex;
+  idOpcaoIndex: OpcoesPratoIndex;
 }

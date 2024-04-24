@@ -22,16 +22,13 @@ export class QrCodes {
   @Column("varchar", { name: "nome", length: 32 })
   nome: string;
 
-  @Column("tinyint", { name: "id_mesa", unsigned: true })
-  idMesa: number;
-
   @ManyToOne(() => Mesas, (mesas) => mesas.qrCodes, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_mesa", referencedColumnName: "idMesa" }])
-  idMesa2: Mesas;
+  idMesa: Mesas;
 
-  @OneToMany(() => QrItens, (qrItens) => qrItens.idQr2)
+  @OneToMany(() => QrItens, (qrItens) => qrItens.idQr)
   qrItens: QrItens[];
 }
