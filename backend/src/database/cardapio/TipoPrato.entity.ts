@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Cardapio } from "./Cardapio";
+import { Cardapio } from "./Cardapio.entity";
 
 @Entity("tipo_prato", { schema: "projtest" })
 export class TipoPrato {

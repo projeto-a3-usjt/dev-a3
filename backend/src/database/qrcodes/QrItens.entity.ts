@@ -6,8 +6,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Cardapio } from "./Cardapio";
-import { QrCodes } from "./QrCodes";
+import { Cardapio } from "../cardapio/Cardapio.entity";
+import { QrCodes } from "./QrCodes.entity";
 
 @Index("FK_qr_itens_cardápio", ["idPrato"], {})
 @Index("FK_qr_itens_qr_codes", ["idQr"], {})

@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { OpcoesPratoIndex } from "./OpcoesPratoIndex";
+import { OpcoesPratoIndex } from "./OpcoesPratoIndex.entity";
 
 @Index("FK_opções_prato_opções_opções_prato_index", ["idOpcaoIndex"], {})
 @Entity("opcoes_prato_opcoes", { schema: "projtest" })

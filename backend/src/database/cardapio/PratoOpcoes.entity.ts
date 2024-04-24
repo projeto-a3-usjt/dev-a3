@@ -6,8 +6,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Cardapio } from "./Cardapio";
-import { OpcoesPratoIndex } from "./OpcoesPratoIndex";
+import { Cardapio } from "./Cardapio.entity";
+import { OpcoesPratoIndex } from "./OpcoesPratoIndex.entity";
 
 @Index("FK_prato_opções_cardápio", ["idPrato"], {})
 @Index("FK_prato_opções_opções_prato_index", ["idOpcaoIndex"], {})

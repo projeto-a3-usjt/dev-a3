@@ -7,9 +7,9 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { TipoPrato } from "./TipoPrato";
-import { PratoOpcoes } from "./PratoOpcoes";
-import { QrItens } from "./QrItens";
+import { TipoPrato } from "./TipoPrato.entity";
+import { PratoOpcoes } from "./PratoOpcoes.entity";
+import { QrItens } from "../qrcodes/QrItens.entity";
 
 @Index("FK_cardápio_tipo_prato", ["idTipo"], {})
 @Entity("cardapio", { schema: "projtest" })

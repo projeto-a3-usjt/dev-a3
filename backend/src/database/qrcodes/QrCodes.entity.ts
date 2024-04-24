@@ -7,8 +7,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Mesas } from "./Mesas";
-import { QrItens } from "./QrItens";
+import { Mesas } from "../mesas/Mesas.entity";
+import { QrItens } from "./QrItens.entity";
 
 @Index("FK_qr_codes_mesas", ["idMesa"], {})
 @Entity("qr_codes", { schema: "projtest" })

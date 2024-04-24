@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { OpcoesPratoOpcoes } from "./OpcoesPratoOpcoes";
-import { PratoOpcoes } from "./PratoOpcoes";
+import { OpcoesPratoOpcoes } from "./OpcoesPratoOpcoes.entity";
+import { PratoOpcoes } from "./PratoOpcoes.entity";
 
 @Entity("opcoes_prato_index", { schema: "projtest" })
 export class OpcoesPratoIndex {

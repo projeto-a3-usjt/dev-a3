@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany } from "typeorm";
-import { Mesas } from "./Mesas";
+import { Mesas } from "../mesas/Mesas.entity";
 
 @Entity("cadastros", { schema: "projtest" })
 export class Cadastros {
