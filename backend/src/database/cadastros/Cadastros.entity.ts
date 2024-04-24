@@ -20,7 +20,7 @@ export class Cadastros {
   @Column("varchar", { name: "nome", length: 64 })
   nome: string;
 
-  @Column("bit", { name: "tipo_conta", default: () => "'0'" })
+  @Column("bit", { name: "tipo_conta", default: () => "0" })
   tipoConta: boolean;
 
   @OneToMany(() => Mesas, (mesas) => mesas.idGarcom)
