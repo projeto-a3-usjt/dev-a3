@@ -34,7 +34,7 @@ export class Cardapio {
     precision: 5,
     scale: 2,
   })
-  preO: string | null;
+  preco: string | null;
 
   @ManyToOne(() => TipoPrato, (tipoPrato) => tipoPrato.cardapios, {
     onDelete: "NO ACTION",
