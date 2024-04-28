@@ -43,10 +43,10 @@ export class CadastrosService {
         }
     }
 
-    async login(user: string, password: string): Promise<void> {
-        const result = await this.cadastrosRepository.findOne({ where: {username: user } })
-        if (!result || result.senha !== password) {
-            throw new HttpException('Login ou senha incorretos', HttpStatus.FORBIDDEN);
+    async login(username: string, senha: string): Promise<void> {
+        const result = await this.cadastrosRepository.findOne({ where: { username: username } })
+        if (!result || result.senha !== senha) {
+           throw new HttpException('Login ou senha incorretos', HttpStatus.FORBIDDEN);
         }
     }
 }

@@ -1,4 +1,4 @@
-import { Controller, Body, Param, Get, Post, Put, Delete } from '@nestjs/common';
+import { Controller, Body, Param, Get, Post, Put, Delete, HttpCode } from '@nestjs/common';
 import { CreateCadastroDTO, UpdateCadastroDTO } from './dto/Cadastros.dto';
 import { CadastrosService } from './cadastros.service';
 
@@ -27,7 +27,8 @@ export class CadastrosController {
     }
 
     @Post('login')
-    async login(@Body() user: string, @Body() password: string) {
-        return await this.cadastrosService.login(user, password);
+    @HttpCode(200)
+    async login(@Body('username') username: string, @Body('senha') senha: string) {
+        return await this.cadastrosService.login(username, senha);
     }
 }
