@@ -11,7 +11,7 @@ export class Cadastros {
   })
   idUsuario: string;
 
-  @Column("varchar", { name: "username", length: 32 })
+  @Column("varchar", { name: "username", length: 32, unique: true })
   username: string;
 
   @Column("char", { name: "senha", comment: "SHA-256", length: 64 })
