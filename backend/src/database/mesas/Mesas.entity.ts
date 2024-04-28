@@ -23,7 +23,7 @@ export class Mesas {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
-  @JoinColumn([{ name: "id_garcom", referencedColumnName: "idUsuario" }])
+  @JoinColumn([{ name: "id_garcom", referencedColumnName: "id_usuario" }])
   idGarcom2: Cadastros;
 
   @OneToMany(() => QrCodes, (qrCodes) => qrCodes.idMesa)

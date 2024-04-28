@@ -4,7 +4,7 @@ import { PartialType } from '@nestjs/mapped-types';
 
 export class CreateCadastroDTO {
     @IsUUID("4")
-    idUsuario: string;
+    id_usuario: string;
 
     @Length(1, 32)
     @IsString()

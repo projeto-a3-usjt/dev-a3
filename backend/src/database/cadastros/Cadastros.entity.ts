@@ -9,7 +9,7 @@ export class Cadastros {
     comment: "UUID",
     length: 36,
   })
-  idUsuario: string;
+  id_usuario: string;
 
   @Column("varchar", { name: "username", length: 32, unique: true })
   username: string;
