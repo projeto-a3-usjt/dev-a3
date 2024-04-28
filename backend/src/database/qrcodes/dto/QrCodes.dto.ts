@@ -1,25 +1,25 @@
-import { IsString, Length, IsNotEmpty } from "class-validator";
+import { IsString, Length, IsNotEmpty, IsInt } from "class-validator";
+import { PartialType } from "@nestjs/mapped-types";
 
+export class CreateQrCodeDTO {
 
-export class QrCodeDTO {
+    @IsInt()
+    @IsNotEmpty()
+    readonly idQr: number;
 
     @IsString()
-    @Length(10, 127)
+    @Length(6, 6)
     @IsNotEmpty()
-    readonly id: string;
+    readonly hash: string;
 
-    // @IsString()
-    // @Length(6)
-    // @IsNotEmpty()
-    // readonly hash: string;
+    @IsString()
+    @Length(1, 32)
+    @IsNotEmpty()
+    readonly nome: string;
 
-    // @IsString()
-    // @Length(32)
-    // @IsNotEmpty()
-    // readonly nome: string;
-
-    // @IsString()
-    // @Length(10, 127)
-    // @IsNotEmpty()
-    // readonly idMesa: string;    
+    @IsInt()
+    @IsNotEmpty()
+    readonly idMesa: number;    
 }
+
+export class UpdateQrCodeDTO extends PartialType(CreateQrCodeDTO) {}
