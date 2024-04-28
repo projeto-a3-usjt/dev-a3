@@ -2,7 +2,7 @@ import { IsUUID, IsString, Length, Matches, IsBoolean } from 'class-validator';
 
 import { PartialType } from '@nestjs/mapped-types';
 
-export class CreateCadastrosDTO {
+export class CreateCadastroDTO {
     @IsUUID("4")
     idUsuario: string;
 
@@ -21,4 +21,4 @@ export class CreateCadastrosDTO {
     tipoConta: boolean;
 }
 
-export class UpdateCadastroDTO extends PartialType(CreateCadastrosDTO) {}
+export class UpdateCadastroDTO extends PartialType(CreateCadastroDTO) {}
