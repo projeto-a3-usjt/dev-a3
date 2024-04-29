@@ -8,7 +8,6 @@ export async function login(username, senha) {
 						body: JSON.stringify(credenciais),
 						headers: { 'Content-Type': 'application/json' }
 				})
-				// esperamos que se dê certo, o servidor redirecione
 				return r
 		} catch (e) {
 				// somente ocorrerá quando o servidor não responder

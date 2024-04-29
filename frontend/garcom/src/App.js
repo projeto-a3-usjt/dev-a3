@@ -4,17 +4,23 @@ import { login } from "./servidor"
 
 export default function App() {
 		const [error, setError] = useState('')
+		const [success, setSuccess] = useState('')
 		
 		async function handleLogin(event) {
 				event.preventDefault();
 				let form = event.nativeEvent.target
+				console.log(form[0].value)
 				let result = await login(form[0].value, form[1].value)
-				if (result) { // caso não foi redirecionado
+				if (result.ok) {
+						setSuccess(form[0].value)
+				} else {
 						let erro = await result.json()
 						setError(erro.message)
-				} else {
-						setError("Erro inesperado.")
 				}
+		}
+
+		if (success) {
+				return <h1 className="text-center m-5">Olá, {success}!</h1>
 		}
 		
 		return (
