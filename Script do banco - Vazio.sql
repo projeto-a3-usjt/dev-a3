@@ -23,12 +23,12 @@ USE `projtest`;
 -- Dumping structure for table projtest.cadastros
 DROP TABLE IF EXISTS `cadastros`;
 CREATE TABLE IF NOT EXISTS `cadastros` (
-  `id_usuário` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'UUID',
+  `id_usuario` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'UUID',
   `username` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `senha` char(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'SHA-256',
   `nome` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `tipo_conta` bit(1) NOT NULL DEFAULT (0),
-  PRIMARY KEY (`id_usuário`) USING BTREE
+  PRIMARY KEY (`id_usuario`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Combinação de login com perfil como visto no exemplo do professor.';
 
 -- Data exporting was unselected.
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `mesas` (
   `id_garçom` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id_mesa`) USING BTREE,
   KEY `FK_mesas_cadastros` (`id_garçom`),
-  CONSTRAINT `FK_mesas_cadastros` FOREIGN KEY (`id_garçom`) REFERENCES `cadastros` (`id_usuário`)
+  CONSTRAINT `FK_mesas_cadastros` FOREIGN KEY (`id_garçom`) REFERENCES `cadastros` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Data exporting was unselected.
@@ -179,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `tipo_prato` (
 
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `mesas_garçons`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `mesas_garçons` AS select `mesas`.`id_mesa` AS `id_mesa`,`cadastros`.`nome` AS `nome` from (`mesas` left join `cadastros` on((`mesas`.`id_garçom` = `cadastros`.`id_usuário`)));
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `mesas_garçons` AS select `mesas`.`id_mesa` AS `id_mesa`,`cadastros`.`nome` AS `nome` from (`mesas` left join `cadastros` on((`mesas`.`id_garçom` = `cadastros`.`id_usuario`)));
 
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `opções_por_prato`;
