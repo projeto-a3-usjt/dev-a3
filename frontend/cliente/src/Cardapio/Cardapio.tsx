@@ -1,10 +1,16 @@
 import React, { ReactElement } from "react";
+import Header from "./components/Header/Header.tsx";
+import Footer from "./components/Footer/Footer.tsx";
 
 function Cardapio(): ReactElement {
   return (
-    <div className="container">
-      <h1>Cardápio</h1>
-    </div>
+    <>
+      <Header />
+
+      <div>Cardápio</div>
+
+      <Footer />
+    </>
   );
 }
 
