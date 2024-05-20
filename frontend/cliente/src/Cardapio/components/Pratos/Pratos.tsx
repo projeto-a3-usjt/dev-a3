@@ -33,8 +33,9 @@ function Pratos(): ReactElement {
               <span>Delicioso calzone com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$20,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -52,8 +53,9 @@ function Pratos(): ReactElement {
               <span>Delicioso misto quente com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$30,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -71,8 +73,9 @@ function Pratos(): ReactElement {
               <span>Deliciosa pizza com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$40,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -93,8 +96,9 @@ function Pratos(): ReactElement {
               <span>Deliciosa lasanha com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$60,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -112,8 +116,9 @@ function Pratos(): ReactElement {
               <span>Deliciosos risoles com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$35,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -131,8 +136,9 @@ function Pratos(): ReactElement {
               <span>Delicioso risoto com presunto e queijo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$54,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -153,8 +159,9 @@ function Pratos(): ReactElement {
               <span>Delicioso petit gâteau com calda de chocolate</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$22,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -175,8 +182,9 @@ function Pratos(): ReactElement {
               <span>Deliciosa água refrescante</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$5,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -197,8 +205,9 @@ function Pratos(): ReactElement {
               <span>Deliciosa batida de morango com gelo</span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$28,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
 
@@ -217,12 +226,13 @@ function Pratos(): ReactElement {
             <div className="d-flex flex-column">
               <span className="fs-1">Filé à parmegiana</span>
               <span>
-                Nosso carro chefe, acompanhado com arroz de batatas fritas
+                Nosso carro chefe, acompanhado com arroz e batatas fritas
               </span>
             </div>
           </div>
-          <div className="d-flex flex-column justify-content-end">
+          <div className="d-flex flex-column justify-content-end gap-1">
             <span className="fs-3 fw-bold text-end">R$70,00</span>
+            <button className="btn btn-secondary">Adicionar</button>
           </div>
         </div>
       </div>
