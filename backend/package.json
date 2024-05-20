@@ -30,9 +30,11 @@
     "@nestjs/websockets": "^10.3.8",
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
+    "mysql": "^2.18.1",
     "mysql2": "^3.9.7",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

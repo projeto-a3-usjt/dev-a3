@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-function Cardapio() {
+function Cardapio(): ReactElement {
   return (
-    <div className="container mx-auto vh-100 d-flex border">
+    <div className="container">
       <h1>Cardápio</h1>
     </div>
   );

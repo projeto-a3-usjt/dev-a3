@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { socket } from "../ConexaoMesa/conexaoWebScoket.js";
 
-function Home() {
+function Home(): ReactElement {
   async function conexaoMesa() {
     socket.connect();
   }
