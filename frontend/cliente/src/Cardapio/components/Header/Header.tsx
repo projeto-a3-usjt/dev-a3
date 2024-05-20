@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 
-import RImage from "../../../media/img/R.png";
+import RestaurantLogo from "../../../media/img/R.png";
 
 function Header(): ReactElement {
   const NavBar = styled.nav``;
@@ -15,7 +15,7 @@ function Header(): ReactElement {
         <div className="d-flex justify-content-between m-2">
           <div className="d-flex gap-2">
             <div>
-              <img src={RImage} width="60px" className="bg-warning" />
+              <img src={RestaurantLogo} width="60px" className="bg-warning" />
             </div>
             <div>
               <div>
@@ -32,7 +32,7 @@ function Header(): ReactElement {
             </div>
           </div>
           <div className="d-flex align-items-center">
-            <button className="btn btn-warning border border-dark">
+            <button className="btn btn-warning border border-dark" style={{fontSize: "14px"}}>
               Chamar Garçom
             </button>
           </div>
