@@ -38,7 +38,7 @@ function Header(): ReactElement {
           </div>
         </div>
       </div>
-      <NavBar className="container d-flex align-items-center bg-light border border-top-2">
+      <NavBar className="container d-flex align-items-center bg-light border">
         <div
           className="d-flex align-items-center gap-5 my-1 mx-3"
           style={{
