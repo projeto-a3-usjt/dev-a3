@@ -4,7 +4,7 @@ function Footer(): ReactElement {
   return (
     <div className="d-flex justify-content-center">
       <div
-        className="container d-flex justify-content-between align-items-center py-2 border position-absolute bottom-0"
+        className="container d-flex justify-content-between align-items-center py-2 border position-fixed bottom-0"
         style={{ backgroundColor: "#F2EBE4" }}
       >
         <span className="fs-5">

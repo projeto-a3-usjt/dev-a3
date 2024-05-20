@@ -15,12 +15,14 @@ function Header(): ReactElement {
         <div className="d-flex justify-content-between m-2">
           <div className="d-flex gap-2">
             <div>
-              <img src={RestaurantLogo} width="60px" className="bg-warning" />
+              <img
+                src={RestaurantLogo}
+                width="60px"
+                className="bg-warning rounded"
+              />
             </div>
-            <div>
-              <div>
-                <span className="fs-5 fw-bold">Restaurante</span>
-              </div>
+            <div className="d-flex flex-column">
+              <span className="fs-5 fw-bold">Restaurante</span>
               <div className="d-flex gap-3">
                 <span>
                   <strong>MESA:</strong> 00
@@ -32,15 +34,19 @@ function Header(): ReactElement {
             </div>
           </div>
           <div className="d-flex align-items-center">
-            <button className="btn btn-warning border border-dark" style={{fontSize: "14px"}}>
+            <button
+              className="btn btn-warning border border-dark"
+              style={{ fontSize: "14px" }}
+            >
               Chamar Garçom
             </button>
           </div>
         </div>
       </div>
+
       <NavBar className="container d-flex align-items-center bg-light border">
         <div
-          className="d-flex align-items-center gap-5 my-1 mx-3"
+          className="d-flex align-items-center gap-5 my-1 mx-1"
           style={{
             listStyleType: "none",
             overflowX: "auto",
@@ -62,7 +68,7 @@ function Header(): ReactElement {
             Bebidas
           </a>
           <a href="" className="link-underline-light text-muted">
-            Coqueteis
+            Coquetéis
           </a>
           <a href="" className="link-underline-light text-muted">
             Especial do dia
