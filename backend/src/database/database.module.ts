@@ -1,6 +1,8 @@
 import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { CadastrosModule } from './cadastros/cadastros.module';
+import { MesasModule } from './mesas/mesas.module';
 
 @Global()
 @Module({
@@ -24,6 +26,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         logging: configService.get<boolean>('DB_LOGGING'),
       }),
     }),
+    MesasModule,
+    CadastrosModule,
   ],
 })
 export class DatabaseModule {}
