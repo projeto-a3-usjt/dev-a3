@@ -1,18 +1,14 @@
-import { IsString, Length, IsNotEmpty } from "class-validator";
+import { IsInt } from "class-validator";
 
 import { PartialType } from '@nestjs/mapped-types';
+import { Cadastros } from "src/database/cadastros/Cadastros.entity";
 
 export class CreateMesaDTO {
 
-    @IsString()
-    @Length(10, 127)
-    @IsNotEmpty()
-    readonly idMesa: string;
+    @IsInt()
+    idMesa: number;
 
-    @IsString()
-    @Length(36)
-    @IsNotEmpty()
-    readonly idGarcom: string;    
+    idGarcom: Cadastros;
 }
 
 export class UpdateMesaDTO extends PartialType(CreateMesaDTO) {}
