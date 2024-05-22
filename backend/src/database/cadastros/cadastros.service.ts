@@ -16,7 +16,6 @@ export class CadastrosService {
   }
 
   async findById(id: string): Promise<Cadastros> {
-      
       let usuario = await this.cadastrosRepository.findOne({
           where: {
             id_usuario: id
