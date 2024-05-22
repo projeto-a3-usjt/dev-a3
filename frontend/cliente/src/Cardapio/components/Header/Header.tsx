@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { connectWebSocket } from "../../../ConexaoMesa/conexaoWebScoket.ts";
 import styled from "styled-components";
 
 import RestaurantLogo from "../../../media/img/R.png";
@@ -37,6 +38,7 @@ function Header(): ReactElement {
             <button
               className="btn btn-warning border border-dark"
               style={{ fontSize: "14px" }}
+              onClick={ connectWebSocket }
             >
               Chamar Garçom
             </button>
