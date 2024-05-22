@@ -6,8 +6,9 @@ import { Cadastros } from "src/database/cadastros/Cadastros.entity";
 export class CreateMesaDTO {
 
     @IsInt()
-    idMesa: number;
+    idMesa?: number;
 
+    // contraditório: "id" no nome, mas é um tipo Cadastros
     idGarcom: Cadastros;
 }
 
