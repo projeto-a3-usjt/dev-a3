@@ -16,10 +16,13 @@ export class CadastrosService {
   }
 
   async findById(id: string): Promise<Cadastros> {
-      let usuario = await this.cadastrosRepository.findOneBy({
-          id_usuario: id
+      
+      let usuario = await this.cadastrosRepository.findOne({
+          where: {
+            id_usuario: id
+          }
       })
-      if (usuario) {
+      if (usuario && typeof(id) !== 'undefined') {
           return usuario
       } else {
           throw new HttpException("Usuário não encontrado", HttpStatus.NOT_FOUND)
