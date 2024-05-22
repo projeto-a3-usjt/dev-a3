@@ -11,7 +11,7 @@ export class CadastrosController {
         return await this.cadastrosService.findAll();
     }
 
-    @Get('id')
+    @Post('id')
     async findById(@Body('id_usuario') id_usuario: string) {
         return await this.cadastrosService.findById(id_usuario)
     }
