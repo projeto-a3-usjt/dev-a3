@@ -17,9 +17,9 @@ export class MesasController {
     @Post()
     async create(@Body('id_usuario') idGarcom: string) {
         try {
-            let garcom = await this.cadastrosService.findById(idGarcom)
+            let usuario = await this.cadastrosService.findById(idGarcom)
             let a = new CreateMesaDTO
-            a = {idGarcom: garcom}
+            a = {garcom: usuario}
             return await this.mesasService.create(a)
         } catch (e) {
             throw new HttpException("ID do garçom inválido", HttpStatus.BAD_REQUEST)

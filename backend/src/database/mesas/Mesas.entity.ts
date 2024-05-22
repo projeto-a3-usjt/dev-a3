@@ -10,7 +10,7 @@ import {
 import { Cadastros } from "../cadastros/Cadastros.entity";
 import { QrCodes } from "../qrcodes/QrCodes.entity";
 
-@Index("FK_mesas_cadastros", ["idGarcom"], {})
+@Index("FK_mesas_cadastros", ["garcom"], {})
 @Entity("mesas", { schema: "projtest" })
 export class Mesas {
   @PrimaryGeneratedColumn({ type: "tinyint", name: "id_mesa", unsigned: true })
@@ -21,7 +21,7 @@ export class Mesas {
     onUpdate: "NO ACTION",
   })
   @JoinColumn([{ name: "id_garcom", referencedColumnName: "id_usuario" }])
-  idGarcom: Cadastros;
+  garcom: Cadastros;
 
   @OneToMany(() => QrCodes, (qrCodes) => qrCodes.idMesa)
   qrCodes: QrCodes[];

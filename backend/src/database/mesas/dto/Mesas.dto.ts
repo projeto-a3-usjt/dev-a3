@@ -9,7 +9,7 @@ export class CreateMesaDTO {
     idMesa?: number;
 
     // contraditório: "id" no nome, mas é um tipo Cadastros
-    idGarcom: Cadastros;
+    garcom: Cadastros;
 }
 
 export class UpdateMesaDTO extends PartialType(CreateMesaDTO) {}
