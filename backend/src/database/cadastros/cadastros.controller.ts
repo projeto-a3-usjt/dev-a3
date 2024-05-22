@@ -11,6 +11,11 @@ export class CadastrosController {
         return await this.cadastrosService.findAll();
     }
 
+    @Get('id')
+    async findById(@Body('id_usuario') id_usuario: string) {
+        return await this.cadastrosService.findById(id_usuario)
+    }
+    
     @Post()
     async create(@Body() createCadastroDTO: CreateCadastroDTO) {
         return await this.cadastrosService.create(createCadastroDTO);

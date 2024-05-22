@@ -15,6 +15,17 @@ export class CadastrosService {
     return await this.cadastrosRepository.find();
   }
 
+  async findById(id: string): Promise<Cadastros> {
+      let usuario = await this.cadastrosRepository.findOneBy({
+          id_usuario: id
+      })
+      if (usuario) {
+          return usuario
+      } else {
+          throw new HttpException("Usuário não encontrado", HttpStatus.NOT_FOUND)
+      }
+  }
+
   async create(createCadastroDTO: CreateCadastroDTO): Promise<Cadastros> {
     try {
       return await this.cadastrosRepository.save(
