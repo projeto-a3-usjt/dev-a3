@@ -8,8 +8,13 @@ export class CreateMesaDTO {
     @IsInt()
     idMesa?: number;
 
-    // contraditório: "id" no nome, mas é um tipo Cadastros
     garcom: Cadastros;
 }
 
-export class UpdateMesaDTO extends PartialType(CreateMesaDTO) {}
+export class UpdateMesaDTO {
+
+    @IsInt()
+    idMesa: number;
+
+    garcom: Cadastros;
+}
