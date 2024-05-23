@@ -29,4 +29,8 @@ export class MesasController {
         return await this.mesasService.update(mesa, usuario)
     }
 
+    @Delete(':id')
+    async delete(@Param('id') mesa: number) {
+        return await this.mesasService.delete(mesa)
+    }
 }
