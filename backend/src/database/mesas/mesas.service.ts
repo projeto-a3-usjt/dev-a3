@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Mesas } from './Mesas.entity';
 import { CreateMesaDTO, UpdateMesaDTO } from './dto/Mesas.dto';
+import { Cadastros } from '../cadastros/Cadastros.entity';
 
 @Injectable()
 export class MesasService {
@@ -33,16 +34,18 @@ export class MesasService {
   }
 
   async update(
-    idGarcom: string,
-    updateMesaDTO: UpdateMesaDTO,
+    idMesa: number,
+    garcom: Cadastros
   ): Promise<void> {
-    const result = await this.mesasRepository.update(idGarcom, updateMesaDTO);
-    if (result.affected === 0) {
-      throw new HttpException('Mesa não encontrada', HttpStatus.NOT_FOUND);
+    if (typeof(idMesa) === 'undefined') {
+      throw new HttpException('Mesa não foi definida', HttpStatus.BAD_REQUEST)
     }
+    let dto = new UpdateMesaDTO
+    dto = {idMesa: idMesa, garcom: garcom}
+    await this.mesasRepository.update(idMesa, dto);
   }
 
-  async delete(id: string): Promise<void> {
+  async delete(id: number): Promise<void> {
     const result = await this.mesasRepository.delete(id);
     if (result.affected === 0) {
       throw new HttpException('Mesa não encontrada', HttpStatus.NOT_FOUND);

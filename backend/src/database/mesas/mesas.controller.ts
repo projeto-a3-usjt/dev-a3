@@ -16,13 +16,17 @@ export class MesasController {
 
     @Post()
     async create(@Body('id_usuario') idGarcom: string) {
-        try {
-            let usuario = await this.cadastrosService.findById(idGarcom)
-            let a = new CreateMesaDTO
-            a = {garcom: usuario}
-            return await this.mesasService.create(a)
-        } catch (e) {
-            throw new HttpException("ID do garçom inválido", HttpStatus.BAD_REQUEST)
-        }
+        let usuario = await this.cadastrosService.findById(idGarcom)
+        let a = new CreateMesaDTO
+        a = {garcom: usuario}
+        return await this.mesasService.create(a)
     }
+
+    @Put(':id')
+    async update(@Param('id') mesa: number,
+                 @Body('id_usuario') idGarcom: string) {
+        let usuario = await this.cadastrosService.findById(idGarcom)
+        return await this.mesasService.update(mesa, usuario)
+    }
+
 }
