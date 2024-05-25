@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home/Home.tsx";
 import Cardapio from "./Cardapio/Cardapio.tsx";
+import Comanda from "./Comanda/Comanda.jsx";
 
 function RoutesApp(): ReactElement {
   return (
@@ -10,6 +11,10 @@ function RoutesApp(): ReactElement {
       <Routes>
         <Route path="/" element={<Cardapio />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/Comanda" element={<Comanda />} />
+
+      
+
       </Routes>
     </BrowserRouter>
   );
