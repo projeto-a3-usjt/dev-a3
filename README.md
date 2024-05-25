@@ -18,6 +18,8 @@ git clone https://github.com/projeto-a3-usjt/dev-a3.git
 
 ### `Execute o Front-end:`
 
+`Cliente`
+
 #### _Abra o terminal_
 
 ```powershell
@@ -38,9 +40,29 @@ PORT=3002 npm start --watch
 
 O comando acima executa a aplicação na porta 3002 e isso é necessario para não conflitar com a aplicação `Garcom` que é executada na porta 3000 por padrão
 
+`Garçom`
+
+#### _Abra um segundo terminal sem fechar o anterior_
+
+```powershell
+cd front-end
+```
+
+```powershell
+cd garcom
+```
+
+```powershell
+npm install
+```
+
+```powershell
+PORT=3000 npm start --watch
+```
+
 ### `Execute o Back-end:`
 
-#### _Abra um segundo terminal sem fechar o primeiro terminal_
+#### _Abra um terceiro terminal sem fechar os anteriores_
 
 ```powershell
 cd back-end
@@ -67,7 +89,7 @@ DB_ENTITIES=dist/**/*.entity{.ts,.js}
 DB_SYNCHRONIZE=true
 ```
 
-### _Volte para o segundo terminal novamente_
+### _Volte para o terceiro terminal novamente_
 
 ```powershell
 npm start
