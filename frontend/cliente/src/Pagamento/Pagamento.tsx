@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import Header from "./components/header/Header";
-import Main from "./components/Main/Main";
-import Footer from "./components/footer/Footer";
-import { Container, Form, Button } from 'react-bootstrap';
+import Header from "./components/Header/Header.tsx";
+import Main from "./components/Main/Main.tsx";
+import Footer from "./components/Footer/Footer.tsx";
+import { Container, Form, Button } from "react-bootstrap";
 
 function Pagamento(): ReactElement {
   return (
@@ -18,7 +18,9 @@ function Pagamento(): ReactElement {
             <option>Dinheiro</option>
           </Form.Control>
         </Form.Group>
-        <Button variant="warning" className="w-100 mt-3">Efetuar pagamento</Button>
+        <Button variant="warning" className="w-100 mt-3">
+          Efetuar pagamento
+        </Button>
       </Form>
       <Footer />
     </Container>
