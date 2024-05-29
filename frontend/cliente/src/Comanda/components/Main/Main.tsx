@@ -4,16 +4,17 @@ function Main(): ReactElement {
   return (
     <>
       <div>
-        <div className="container fluid">
-          <h1 className="titulo" style={{ marginLeft: "100px" }}>
-            Calzone
-          </h1>
+        <div className="container">
+
           <div
             className="Card"
             style={{
               backgroundColor: "#F4F4F4",
             }}
           >
+                      <h1 className="titulo" style={{ marginLeft: "100px" }}>
+            Calzone
+          </h1>
             <p
               className="NomeP"
               style={{
@@ -42,10 +43,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -58,8 +58,8 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
@@ -79,10 +79,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -95,8 +94,8 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
@@ -117,10 +116,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -133,8 +131,8 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
@@ -160,10 +158,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -176,8 +173,8 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
@@ -198,10 +195,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -214,8 +210,8 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
@@ -235,10 +231,9 @@ function Main(): ReactElement {
                 style={{
                   border: "1px  solid #1a1919",
                   borderRadius: "5px",
-                  padding: "20px 0px 10px 10px",
+                  padding: "20px 0 20px 10px",
                   width: "95%",
-                  height: "75px",
-                  marginBottom: "10px",
+                  height: "90px",
                   fontSize: "32px",
                 }}
               >
@@ -251,16 +246,15 @@ function Main(): ReactElement {
                     float: "right",
                     height: "40px",
                     width: "40px",
-                    marginTop: "-85px",
-                    marginRight: "60px",
+                    marginTop: "-80px",
+                    marginRight: "80px",
                   }}
                   id="option1"
                   className="checkbox"
                 />
               </div>
             </div>
-          </div>
-          <h1
+            <h1
             className="observacoes"
             style={{
               fontSize: "32px",
@@ -279,6 +273,8 @@ function Main(): ReactElement {
               height: "400px",
             }}
           ></textarea>
+          </div>
+
         </div>
       </div>
     </>
