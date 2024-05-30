@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 function Main(): ReactElement {
   return (
     <>
-      <div>
+  
         <div className="container">
 
           <div
@@ -12,30 +12,37 @@ function Main(): ReactElement {
               backgroundColor: "#F4F4F4",
             }}
           >
-                      <h1 className="titulo" style={{ marginLeft: "100px" }}>
+            <div className="row">
+            <div className="col-12">
+          
+                      <h1 className="titulo" style={{ marginLeft: "10%" }}>
             Calzone
+          
           </h1>
+          </div>
+            </div>
             <p
               className="NomeP"
               style={{
                 textAlign: "left",
                 fontStyle: "italic",
-                marginLeft: "100px",
+                marginLeft: "10%",
               }}
             >
               Delicioso calzone de presunto e queijo
             </p>
             <p
               className="mensagemRemocao"
-              style={{ fontSize: "32px", marginLeft: "100px" }}
+              style={{ fontSize: "32px", marginLeft: "10%" }}
             >
               Remover Ingrediente
             </p>
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
+               
               }}
             >
               <p
@@ -70,7 +77,7 @@ function Main(): ReactElement {
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
               }}
             >
@@ -107,7 +114,7 @@ function Main(): ReactElement {
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
               }}
             >
@@ -142,14 +149,14 @@ function Main(): ReactElement {
             </div>
             <p
               className="mensagemAdiocionar"
-              style={{ fontSize: "32px", marginLeft: "100px" }}
+              style={{ fontSize: "32px", marginLeft: "10%" }}
             >
               Adicionar Ingredientes
             </p>
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
               }}
             >
@@ -186,7 +193,7 @@ function Main(): ReactElement {
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
               }}
             >
@@ -222,7 +229,7 @@ function Main(): ReactElement {
             <div
               className="cardDentro1"
               style={{
-                marginLeft: "100px",
+                marginLeft: "10%",
                 width: "80%",
               }}
             >
@@ -258,7 +265,7 @@ function Main(): ReactElement {
             className="observacoes"
             style={{
               fontSize: "32px",
-              marginLeft: "100px",
+              marginLeft: "10%",
             }}
           >
             Observações:
@@ -267,16 +274,16 @@ function Main(): ReactElement {
             className="text"
             style={{
               fontSize: "16x",
-              marginLeft: "100px",
+              marginLeft: "10%",
               marginBottom: "120px",
               width: "77%",
               height: "400px",
             }}
           ></textarea>
-          </div>
 
+          </div>
         </div>
-      </div>
+
     </>
   );
 }
