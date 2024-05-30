@@ -1,8 +1,8 @@
 import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { CadastrosModule } from './cadastros/cadastros.module';
-import { MesasModule } from './mesas/mesas.module';
+import { CadastrosModule } from 'src/cadastros/cadastros.module';
+import { MesasModule } from 'src/mesas/mesas.module';
 
 @Global()
 @Module({
