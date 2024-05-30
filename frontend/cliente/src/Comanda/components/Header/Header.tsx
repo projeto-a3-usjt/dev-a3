@@ -11,13 +11,7 @@ function Header(): ReactElement {
         backgroundSize: "cover",
       }}
     >
-      <div>
-        <button>
-          <span className="" style={{}}>
-            &#8592;
-          </span>
-        </button>
-      </div>
+
     </header>
   );
 }

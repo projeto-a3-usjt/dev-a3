@@ -24,6 +24,7 @@ function Footer(): ReactElement {
           style={{
             fontSize: "18px",
             fontWeight: "bold",
+            marginLeft:"10%",
           }}
         >
           Total da Conta: R$ 100,00
@@ -39,7 +40,8 @@ function Footer(): ReactElement {
             borderRadius: "5px",
             cursor: "pointer",
             transition: "background-color 0.3s",
-            marginRight: "100px",
+            marginRight: "10%",
+            marginLeft:"10%",
           }}
         >
           Fechar a Conta

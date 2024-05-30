@@ -66,7 +66,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
@@ -102,7 +102,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
@@ -139,7 +139,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
@@ -181,7 +181,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
@@ -218,7 +218,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
@@ -254,7 +254,7 @@ function Main(): ReactElement {
                     height: "40px",
                     width: "40px",
                     marginTop: "-80px",
-                    marginRight: "80px",
+                    marginRight: "10%",
                   }}
                   id="option1"
                   className="checkbox"
