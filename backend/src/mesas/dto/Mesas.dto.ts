@@ -1,6 +1,5 @@
 import { IsInt } from "class-validator";
 
-import { PartialType } from '@nestjs/mapped-types';
 import { Cadastros } from "src/cadastros/Cadastros.entity";
 
 export class CreateMesaDTO {
