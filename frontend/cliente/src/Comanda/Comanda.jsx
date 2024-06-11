@@ -1,13 +1,13 @@
-import React, { ReactElement } from "react";
+
 
 import Header from "./components/Header/Header.tsx";
-import Main from "./components/Main/Main.tsx";
+import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.tsx";
-function Comanda(): ReactElement {
+function Comanda(){
   return (
     <>
       <Header />
-      <Main />
+      <Main/>
       <Footer />
     </>
   );

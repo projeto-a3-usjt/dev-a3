@@ -1,6 +1,38 @@
-import React, { ReactElement } from "react";
+import React, { useState } from 'react';
 
-function Main(): ReactElement {
+function Main() {
+
+{
+  const [checkboxes, setCheckboxes] = useState({
+    checkbox1: false,
+    checkbox2: false,
+    checkbox3: false
+  });
+  const [total, setTotal] = useState(null);
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setCheckboxes((prev) => ({
+      ...prev,
+      [name]: checked
+    }));
+  };
+
+  const calcular = () => {
+    let soma = 0;
+
+    if (checkboxes.checkbox1) {
+      soma += 2;
+    }
+    if (checkboxes.checkbox2) {
+      soma += 5; // Valor associado à checkbox2
+    }
+    if (checkboxes.checkbox3) {
+      soma += 10; // Valor associado à checkbox3
+    }
+
+    setTotal(soma);
+  };
   return (
     <>
   
@@ -176,6 +208,9 @@ function Main(): ReactElement {
               <div className="option">
                 <input
                   type="checkbox"
+                  name="checkbox1"
+                  checked={checkboxes.checkbox1}
+                  onChange={handleCheckboxChange}
                   style={{
                     float: "right",
                     height: "40px",
@@ -213,6 +248,9 @@ function Main(): ReactElement {
               <div className="option">
                 <input
                   type="checkbox"
+                  name="checkbox2"
+                  checked={checkboxes.checkbox2}
+                  onChange={handleCheckboxChange}
                   style={{
                     float: "right",
                     height: "40px",
@@ -245,10 +283,14 @@ function Main(): ReactElement {
                 }}
               >
                 Presunto
+                
               </p>
               <div className="option">
                 <input
                   type="checkbox"
+                  name="checkbox3"
+                  checked={checkboxes.checkbox3}
+                  onChange={handleCheckboxChange}
                   style={{
                     float: "right",
                     height: "40px",
@@ -271,20 +313,21 @@ function Main(): ReactElement {
             Observações:
           </h1>
           <textarea
-            className="text"
-            style={{
-              fontSize: "16x",
+          style={{
+              fontSize: "16px",
               marginLeft: "10%",
-              marginBottom: "120px",
+              marginBottom: "30%",
               width: "77%",
               height: "400px",
             }}
-          ></textarea>
-
+          />
           </div>
         </div>
+        
 
     </>
   );
 }
+}
 export default Main;
+
