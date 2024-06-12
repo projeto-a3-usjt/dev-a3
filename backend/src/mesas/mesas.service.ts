@@ -16,6 +16,12 @@ export class MesasService {
     return await this.mesasRepository.find();
   }
 
+  async findById(id: number): Promise<Mesas> {
+    return await this.mesasRepository.findOneBy({
+        idMesa: id
+    })
+  }
+
   async create(createMesaDTO: CreateMesaDTO): Promise<Mesas> {
     try {
       return await this.mesasRepository.save(

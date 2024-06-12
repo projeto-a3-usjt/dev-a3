@@ -14,6 +14,11 @@ export class MesasController {
         return await this.mesasService.findAll();
     }
 
+    @Get(':id')
+    async findById(@Param('id') id: number) {
+        return await this.mesasService.findById(id)
+    }
+
     @Post()
     async create(@Body('id_usuario') idGarcom: string) {
         let usuario = await this.cadastrosService.findById(idGarcom)
