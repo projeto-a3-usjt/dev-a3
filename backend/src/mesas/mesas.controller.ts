@@ -1,5 +1,5 @@
-import { Controller, Body, Param, Get, Post, Put, Delete, HttpCode, HttpException, HttpStatus } from '@nestjs/common';
-import { CreateMesaDTO, UpdateMesaDTO } from "./dto/Mesas.dto"
+import { Controller, Body, Param, Get, Post, Put, Delete } from '@nestjs/common';
+import { CreateMesaDTO } from "./dto/Mesas.dto"
 import { MesasService } from "./mesas.service"
 import { CadastrosService } from "../cadastros/cadastros.service"
 
