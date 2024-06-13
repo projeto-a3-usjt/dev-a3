@@ -9,7 +9,7 @@ function Main() {
     checkbox3: false
   });
 const [total, setTotal] = useState(null);
-module.exports = total;
+
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
