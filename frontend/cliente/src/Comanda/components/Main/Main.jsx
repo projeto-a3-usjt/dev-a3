@@ -8,7 +8,8 @@ function Main() {
     checkbox2: false,
     checkbox3: false
   });
-  const [total, setTotal] = useState(null);
+const [total, setTotal] = useState(null);
+module.exports = total;
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
@@ -19,19 +20,19 @@ function Main() {
   };
 
   const calcular = () => {
-    let soma = 0;
+    let soma = 10;
 
     if (checkboxes.checkbox1) {
-      soma += 2;
+      soma += 5.25;
     }
     if (checkboxes.checkbox2) {
-      soma += 5; // Valor associado à checkbox2
+      soma += 1.58; // Valor associado à checkbox2
     }
     if (checkboxes.checkbox3) {
-      soma += 10; // Valor associado à checkbox3
+      soma += 3.75; // Valor associado à checkbox3
     }
 
-    setTotal(soma);
+setTotal(soma);
   };
   return (
     <>
@@ -303,6 +304,32 @@ function Main() {
                 />
               </div>
             </div>
+            <div
+              className="cardDentro1"
+              style={{
+                marginLeft: "10%",
+                width: "80%",
+               
+              }}
+            >
+            <button type="button" onClick={calcular}
+                      style={{
+                        padding: "10px 20px",
+                        fontSize: "16px",
+                        color: "#fff",
+                        backgroundColor: "#007bff",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        transition: "background-color 0.3s",
+                        float: "right",
+                        marginRight:"5%",}}>Calcular</button>
+            <p
+            className='taxa'
+            style={{
+              fontSize:"20px",
+            }}>Taxa extra: R${total !== null ? total : 'Nenhum cálculo realizado ainda'}</p>
+            </div>
             <h1
             className="observacoes"
             style={{
@@ -323,8 +350,6 @@ function Main() {
           />
           </div>
         </div>
-        
-
     </>
   );
 }

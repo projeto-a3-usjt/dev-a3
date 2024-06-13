@@ -27,7 +27,7 @@ function Footer(): ReactElement {
             marginLeft:"10%",
           }}
         >
-          Total da Conta: R$ 100,00
+          Total da Conta: R$100,00
         </span>
         <button
           className="close-account-btn"
