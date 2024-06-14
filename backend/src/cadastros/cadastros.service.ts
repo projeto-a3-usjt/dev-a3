@@ -62,7 +62,7 @@ export class CadastrosService {
     }
   }
 
-  async login(username: string, senha: string): Promise<void> {
+  async login(username: string, senha: string): Promise<Cadastros> {
     const result = await this.cadastrosRepository.findOne({
       where: { username: username },
     });
@@ -71,6 +71,8 @@ export class CadastrosService {
         'Login ou senha incorretos',
         HttpStatus.FORBIDDEN,
       );
+    } else {
+      return result
     }
   }
 }
