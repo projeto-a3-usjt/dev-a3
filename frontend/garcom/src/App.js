@@ -1,22 +1,29 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import { login } from "./servidor";
+import { login, getQrs, getMesas } from "./servidor";
 import { socket } from "./ConexaoMesa/conexaoWebScoket";
+import MesaCard from "./componentes/MesaCard";
 
 export default function App() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
+  const [accType, setAccType] = useState(0);
+  const [qrs, setQrs] = useState([]);
+  const [mesas, setMesas] = useState([]);
+  
   async function handleLogin(event) {
     event.preventDefault();
     let form = event.nativeEvent.target;
 
     let result = await login(form[0].value, form[1].value);
+    let json = await result.json()
     if (result.ok) {
-      setSuccess(form[0].value);
+      setQrs((await getQrs()).data);
+      setMesas((await getMesas()).data);
+      setSuccess(json.nome);
+      setAccType(json.tipoConta.data[0])
     } else {
-      let erro = await result.json();
-      setError(erro.message);
+      setError(json.message);
     }
   }
 
@@ -32,22 +39,28 @@ export default function App() {
     socket.disconnect();
   }
 
+  function forMesas(mesas, qrs) {
+    // besteira
+    let retarray = []
+    let qrarray = []
+    for (let mesa of mesas) {
+      for (let qr of qrs) {
+        if (mesa.idMesa = qr.idMesa.idMesa) {
+          qrarray.push(qr)
+        }
+      }
+      retarray.push(<MesaCard numMesa={mesa.idMesa} qrArray={JSON.stringify(qrs)}/>)
+      qrarray = []
+    }
+    return retarray
+  }
+  
   if (success) {
     return (
-      <div className="container mx-auto vh-100 d-flex border align-items-center">
-        <h1 className="text-center m-5">Olá, {success}!</h1>
-        <div className="card mx-auto w-50 shadow">
-          <div className="card-header">Conetando a uma Mesa</div>
-          <div className="row p-4 justify-content-center">
-            <button className="mt-2 btn btn-primary" onClick={conexaoMesa}>
-              Conectar Mesa 5
-            </button>
-
-            <button className="mt-2 btn btn-primary" onClick={desconectaMesa}>
-              Desconectar Mesa 5
-            </button>
-          </div>
-        </div>
+      <div className="container mx-auto align-items-center text-center">
+        <h1 className="m-5">Olá, {success}!</h1>
+        {!!accType && <h2 className="m-4">Você tem privilégios de administração.</h2>}
+        { forMesas(mesas, qrs) }
       </div>
     );
   }
