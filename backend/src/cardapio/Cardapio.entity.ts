@@ -27,6 +27,9 @@ export class Cardapio {
   @Column("varchar", { name: "descricao", nullable: true, length: 256 })
   descricao: string | null;
 
+  @Column("varchar", { name: "link_imagem", nullable: true, length: 512})
+  linkImagem: string | null;
+    
   @Column("decimal", {
     name: "preço",
     nullable: true,

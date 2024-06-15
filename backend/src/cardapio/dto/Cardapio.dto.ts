@@ -9,6 +9,10 @@ export class CreatePratoDTO {
     @Length(1, 64)
     @IsString()
     nomePrato: string;
+
+    @Length(1, 512)
+    @IsString()
+    linkImagem: string;
     
     @Length(1, 256)
     @IsString()
