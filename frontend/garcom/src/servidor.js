@@ -34,3 +34,23 @@ export async function getMesas() {
     return e
   }
 }
+
+export async function newQr(mesa, nome) {
+  try {
+    const r = await axios.post(`${url}/qrcodes/${mesa}`, {
+      "nome": nome
+    })
+    return r.data
+  } catch (e) {
+    return e
+  }
+}
+
+export async function delByMesa(mesa) {
+  try {
+    const r = await axios.delete(`${url}/qrcodes/mesa/${mesa}`)
+    return r
+  } catch (e) {
+    return e
+  }
+}
