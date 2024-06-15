@@ -25,6 +25,7 @@ export class QrCodes {
   @ManyToOne(() => Mesas, (mesas) => mesas.qrCodes, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
+    eager: true
   })
   @JoinColumn([{ name: "id_mesa", referencedColumnName: "idMesa" }])
   idMesa: Mesas;
