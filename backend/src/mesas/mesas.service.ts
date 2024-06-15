@@ -13,7 +13,7 @@ export class MesasService {
   ) {}
 
   async findAll(): Promise<Mesas[]> {
-    return await this.mesasRepository.find();
+    return await this.mesasRepository.find({order: {idMesa: 'asc'}});
   }
 
   async findById(id: number): Promise<Mesas> {
