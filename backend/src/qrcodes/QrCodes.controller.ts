@@ -21,7 +21,7 @@ export class QrcodesController {
         if (mesa) {
             let dto = new CreateQrCodeDTO
             dto = { idMesa: mesa, nome: nome }
-            await this.qrcodesService.create(dto)
+            return await this.qrcodesService.create(dto)
         } else {
             throw new HttpException("Mesa inválida", HttpStatus.BAD_REQUEST)
         }
