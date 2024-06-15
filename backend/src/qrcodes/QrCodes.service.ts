@@ -18,9 +18,8 @@ export class QrCodesService {
 
   // privado pois não é utilizado pra nada além do deleteByMesa
   private async findByMesa(mesa: Mesas): Promise<QrCodes[]> {
-    return await this.qrcodeRepository.findBy({
-        idMesa: mesa
-    })
+    let qrs = await this.findAll();
+    return qrs.filter((qr) => qr.idMesa.idMesa === mesa.idMesa)
   }
 
   async findByHash(hash: string): Promise<QrCodes> {
