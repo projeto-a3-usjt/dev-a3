@@ -45,11 +45,11 @@ export default function App() {
     let qrarray = []
     for (let mesa of mesas) {
       for (let qr of qrs) {
-        if (mesa.idMesa = qr.idMesa.idMesa) {
+        if (mesa.idMesa === qr.idMesa.idMesa) {
           qrarray.push(qr)
         }
       }
-      retarray.push(<MesaCard numMesa={mesa.idMesa} qrArray={JSON.stringify(qrs)}/>)
+      retarray.push(<MesaCard numMesa={mesa.idMesa} qrArray={JSON.stringify(qrarray)}/>)
       qrarray = []
     }
     return retarray

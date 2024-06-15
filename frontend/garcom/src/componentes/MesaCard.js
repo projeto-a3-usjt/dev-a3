@@ -18,7 +18,7 @@ export default function MesaCard({ numMesa, qrArray }) {
   }
   
   return (
-    <div className="card mx-auto w-100">
+    <div className="card mx-auto w-100 m-4">
       <div className="card-header d-flex justify-content-between">Mesa {numMesa} <CloseButton/></div>
       <div className="d-flex overflow-auto w-100 align-items-center">
         { forQrs(JSON.parse(qrArray)) }
