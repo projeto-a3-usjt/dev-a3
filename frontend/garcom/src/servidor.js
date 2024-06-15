@@ -25,3 +25,12 @@ export async function getQrs() {
     return e
   }
 }
+
+export async function getMesas() {
+  try {
+    const r = await axios.get(`${url}/mesas`)
+    return r
+  } catch (e) {
+    return e
+  }
+}
