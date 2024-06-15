@@ -31,7 +31,7 @@ export class QrCodesService {
   
   async create(dto: CreateQrCodeDTO): Promise<QrCodes> {
     do { // evitar uma colisão, mas é uma chance astronômica de 1/16^6
-      dto.hash = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');        
+      dto.hash = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
     } while (await this.findByHash(dto.hash))
     
     return await this.qrcodeRepository.save(
