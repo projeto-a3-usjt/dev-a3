@@ -12,7 +12,7 @@ export function FooterComanda(): ReactElement {
         style={{ backgroundColor: "#F2EBE4" }}
       >
         <span className="fs-5">
-          Total da conta: <strong>R${total}</strong>
+          Total da conta: <strong>R${total + 20.00}</strong>
         </span>
         <button className="btn btn-warning border border-dark fs-5">
           Fechar conta

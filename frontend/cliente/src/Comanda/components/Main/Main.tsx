@@ -23,6 +23,7 @@ export function Main(): ReactElement {
     };
 
     const calcular = () => {
+      let soma = 0;
 
       if (checkboxes.checkbox1) {
         soma += 5.25;
