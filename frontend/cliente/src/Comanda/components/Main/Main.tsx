@@ -4,7 +4,7 @@ import { useCalculation } from "../../CalculandoComanda.tsx";
 
 export function Main(): ReactElement {
   {
-    var soma: number = 1
+
     
     const [checkboxes, setCheckboxes] = useState({
       checkbox1: false,
@@ -63,7 +63,7 @@ export function Main(): ReactElement {
                 marginLeft: "10%",
               }}
             >
-              Delicioso calzone de presunto e queijo {total}
+              Delicioso calzone de presunto e queijo 
             </p>
             <p
               className="mensagemRemocao"
