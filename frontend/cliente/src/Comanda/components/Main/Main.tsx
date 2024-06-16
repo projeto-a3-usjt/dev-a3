@@ -1,44 +1,46 @@
-import React, { useState } from 'react';
-
-function Main() {
-
-{
-  const [checkboxes, setCheckboxes] = useState({
-    checkbox1: false,
-    checkbox2: false,
-    checkbox3: false
-  });
-const [total, setTotal] = useState(null);
+import React, { ReactElement, useState } from "react";
+import { useCalculation } from "../../CalculandoComanda.tsx";
 
 
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setCheckboxes((prev) => ({
-      ...prev,
-      [name]: checked
-    }));
-  };
+export function Main(): ReactElement {
+  {
+    var soma: number = 1
+    
+    const [checkboxes, setCheckboxes] = useState({
+      checkbox1: false,
+      checkbox2: false,
+      checkbox3: false,
+    });
 
-  const calcular = () => {
-    let soma = 10;
+    const {total, setTotal} = useCalculation();
 
-    if (checkboxes.checkbox1) {
-      soma += 5.25;
-    }
-    if (checkboxes.checkbox2) {
-      soma += 1.58; // Valor associado à checkbox2
-    }
-    if (checkboxes.checkbox3) {
-      soma += 3.75; // Valor associado à checkbox3
-    }
+    const handleCheckboxChange = (e) => {
+      const { name, checked } = e.target;
+      setCheckboxes((prev) => ({
+        ...prev,
+        [name]: checked,
+      }));
+    };
 
-setTotal(soma);
-  };
-  return (
-    <>
-  
+    const calcular = () => {
+
+      if (checkboxes.checkbox1) {
+        soma += 5.25;
+      }
+      if (checkboxes.checkbox2) {
+        soma += 1.58; // Valor associado à checkbox2
+      }
+      if (checkboxes.checkbox3) {
+        soma += 3.75; // Valor associado à checkbox3
+      }
+
+      setTotal(soma);
+
+    };    
+
+    return (
+      <>
         <div className="container">
-
           <div
             className="Card"
             style={{
@@ -46,13 +48,11 @@ setTotal(soma);
             }}
           >
             <div className="row">
-            <div className="col-12">
-          
-                      <h1 className="titulo" style={{ marginLeft: "10%" }}>
-            Calzone
-          
-          </h1>
-          </div>
+              <div className="col-12">
+                <h1 className="titulo" style={{ marginLeft: "10%" }}>
+                  Calzone
+                </h1>
+              </div>
             </div>
             <p
               className="NomeP"
@@ -62,7 +62,7 @@ setTotal(soma);
                 marginLeft: "10%",
               }}
             >
-              Delicioso calzone de presunto e queijo
+              Delicioso calzone de presunto e queijo {total}
             </p>
             <p
               className="mensagemRemocao"
@@ -75,7 +75,6 @@ setTotal(soma);
               style={{
                 marginLeft: "10%",
                 width: "80%",
-               
               }}
             >
               <p
@@ -284,7 +283,6 @@ setTotal(soma);
                 }}
               >
                 Presunto
-                
               </p>
               <div className="option">
                 <input
@@ -309,50 +307,57 @@ setTotal(soma);
               style={{
                 marginLeft: "10%",
                 width: "80%",
-               
               }}
             >
-            <button type="button" onClick={calcular}
-                      style={{
-                        padding: "10px 20px",
-                        fontSize: "16px",
-                        color: "#fff",
-                        backgroundColor: "#007bff",
-                        border: "none",
-                        borderRadius: "5px",
-                        cursor: "pointer",
-                        transition: "background-color 0.3s",
-                        float: "right",
-                        marginRight:"5%",}}>Calcular</button>
-            <p
-            className='taxa'
-            style={{
-              fontSize:"20px",
-            }}>Taxa extra: R${total !== null ? total : 'Nenhum cálculo realizado ainda'}</p>
+              <button
+                type="button"
+                onClick={calcular}
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "16px",
+                  color: "#fff",
+                  backgroundColor: "#007bff",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s",
+                  float: "right",
+                  marginRight: "5%",
+                }}
+              >
+                Calcular
+              </button>
+              <p
+                className="taxa"
+                style={{
+                  fontSize: "20px",
+                }}
+              >
+                Taxa extra: R$
+                {total !== null ? total : "Nenhum cálculo realizado ainda"}
+              </p>
             </div>
             <h1
-            className="observacoes"
-            style={{
-              fontSize: "32px",
-              marginLeft: "10%",
-            }}
-          >
-            Observações:
-          </h1>
-          <textarea
-          style={{
-              fontSize: "16px",
-              marginLeft: "10%",
-              marginBottom: "30%",
-              width: "77%",
-              height: "400px",
-            }}
-          />
+              className="observacoes"
+              style={{
+                fontSize: "32px",
+                marginLeft: "10%",
+              }}
+            >
+              Observações:
+            </h1>
+            <textarea
+              style={{
+                fontSize: "16px",
+                marginLeft: "10%",
+                marginBottom: "30%",
+                width: "77%",
+                height: "400px",
+              }}
+            />
           </div>
         </div>
-    </>
-  );
+      </>
+    );    
+  }  
 }
-}
-export default Main;
-
