@@ -4,20 +4,14 @@ function Header(): ReactElement {
   return (
     <header
       style={{
-        backgroundImage: `url(${require("../../../media/img/Teste.jpg")})`,
+        backgroundImage: `url(${require("../../../media/img/headerComanda.PNG")})`,
         height: "40vh",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
     >
-      <div>
-        <button>
-          <span className="" style={{}}>
-            &#8592;
-          </span>
-        </button>
-      </div>
+
     </header>
   );
 }

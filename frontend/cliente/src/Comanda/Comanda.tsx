@@ -1,14 +1,17 @@
-import React, { ReactElement } from "react";
-
 import Header from "./components/Header/Header.tsx";
-import Main from "./components/Main/Main.tsx";
-import Footer from "./components/Footer/Footer.tsx";
-function Comanda(): ReactElement {
+import { Main } from "./components/Main/Main.tsx";
+import { FooterComanda } from "./components/Footer/FooterComanda.tsx"; 
+import { CalculationProvider } from "./CalculandoComanda.tsx";
+
+
+function Comanda(){
   return (
     <>
+    <CalculationProvider>
       <Header />
-      <Main />
-      <Footer />
+      <Main/>
+      <FooterComanda />
+    </CalculationProvider>
     </>
   );
 }
