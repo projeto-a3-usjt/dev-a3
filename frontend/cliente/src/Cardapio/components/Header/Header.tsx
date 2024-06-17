@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import RestaurantLogo from "../../../media/img/R.png";
 
-function Header(): ReactElement {
+function Header({dados}): ReactElement {
   const NavBar = styled.nav``;
 
   return (
@@ -26,10 +26,10 @@ function Header(): ReactElement {
               <span className="fs-5 fw-bold">Restaurante</span>
               <div className="d-flex gap-3">
                 <span>
-                  <strong>MESA:</strong> 00
+                  <strong>MESA:</strong> {dados.mesa}
                 </span>
                 <span>
-                  <strong>NOME:</strong> Josevildo
+                  <strong>NOME:</strong> {dados.nome}
                 </span>
               </div>
             </div>
