@@ -123,23 +123,22 @@ CREATE TABLE IF NOT EXISTS `qr_codes` (
   PRIMARY KEY (`id_qr`),
   KEY `FK_qr_codes_mesas` (`id_mesa`),
   CONSTRAINT `FK_201d05b67cf5b9e70247fb20060` FOREIGN KEY (`id_mesa`) REFERENCES `mesas` (`id_mesa`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table pr2.qr_codes: ~12 rows (approximately)
+-- Dumping data for table pr2.qr_codes: ~11 rows (approximately)
 DELETE FROM `qr_codes`;
 INSERT INTO `qr_codes` (`id_qr`, `hash`, `nome`, `id_mesa`) VALUES
-	(1, 'd8edcc', 'Olívia', 1),
-	(2, '9c2245', 'Joyce', 1),
-	(3, '595b47', 'Viviana', 2),
-	(4, 'bfe7e4', 'Margarete', 2),
-	(5, '3aaf65', 'Abe Froman', 3),
-	(6, 'd77fe3', 'Cameron', 3),
-	(7, 'ed059e', 'Sloane', 3),
-	(8, '9ebf22', 'Boça', 4),
-	(9, '87e672', 'Joselito', 4),
-	(10, '109799', 'Gil Brother Away', 4),
-	(11, 'eb682a', 'Cláudio Ricardo', 4),
-	(12, '8b855a', 'Padre Quemedo', 4);
+	(23, '7db485', 'Olívia', 1),
+	(24, '9fec46', 'Joyce', 1),
+	(25, '758962', 'Viviana', 2),
+	(26, 'c1de2f', 'Margarete', 2),
+	(27, 'a6eb65', 'Abe Froman', 3),
+	(28, '898937', 'Cameron', 3),
+	(29, 'a22506', 'Sloane', 3),
+	(30, '5dd5d8', 'Didi', 4),
+	(31, '04bb21', 'Dedé', 4),
+	(32, '0923a6', 'Mussum', 4),
+	(33, 'da9160', 'Zacarias', 4);
 
 -- Dumping structure for table pr2.qr_itens
 CREATE TABLE IF NOT EXISTS `qr_itens` (
