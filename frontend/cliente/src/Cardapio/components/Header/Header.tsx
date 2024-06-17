@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { connectWebSocket } from "../../../ConexaoMesa/conexaoWebScoket.ts";
+import { connectWebSocket } from "../../../Conexao/conexaoWebSocket.ts";
 import styled from "styled-components";
 
 import RestaurantLogo from "../../../media/img/R.png";

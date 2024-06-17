@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { Alert } from "react-bootstrap";
 import { login, getQrs, getMesas } from "./servidor";
-import { socket } from "./ConexaoMesa/conexaoWebScoket";
+import { socket } from "./ConexaoMesa/conexaoWebSocket";
 import MesaCard from "./componentes/MesaCard";
 
 export default function App() {

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { socket } from "../ConexaoMesa/conexaoWebScoket.ts";
+import { socket } from "../Conexao/conexaoWebSocket.ts";
 
 function Home(): ReactElement {
   async function conexaoMesa() {
