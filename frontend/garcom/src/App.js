@@ -75,7 +75,7 @@ export default function App() {
           <label className="form-label">
             {" "}
             Senha
-            <input className="form-control" name="senha"></input>
+            <input className="form-control" type="password" name="senha"></input>
           </label>
           <button className="w-25 m-3 btn btn-primary">Entrar</button>
           {error && <p className="alert alert-danger">{error}</p>}
