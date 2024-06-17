@@ -16,23 +16,11 @@ export class AppGateway
   @WebSocketServer() server: Server;
   private logger: Logger = new Logger('AppGateway');
 
-  @SubscribeMessage('mesa01')
+  @SubscribeMessage('mesas')
   webSocketMesa01(client: Socket, payload: string): void {
     console.log(payload);
     console.log(client.id);
     this.server.emit('msgToGarcom', payload, client.id);
-  }
-
-  @SubscribeMessage('mesa02')
-  webSocketMesa02(client: Socket, payload: string): void {
-    console.log(payload);
-    console.log(client.id);
-  }
-
-  @SubscribeMessage('mesa03')
-  webSocketMesa03(client: Socket, payload: string): void {
-    console.log(payload);
-    console.log(client.id);
   }
 
   afterInit(server: Server) {
