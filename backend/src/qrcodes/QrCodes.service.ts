@@ -22,10 +22,14 @@ export class QrCodesService {
     return qrs.filter((qr) => qr.idMesa.idMesa === mesa.idMesa)
   }
 
-  async findByHash(hash: string): Promise<QrCodes> {
-    return await this.qrcodeRepository.findOneBy({
-        hash: hash
-    })
+  async findByHash(hash2: string): Promise<QrCodes> {
+    let qrs = await this.findAll();
+    let qr = qrs.find((e) => e.hash === hash2)
+    if (qr) {
+        return qr
+    } else {
+      throw new HttpException("QR Code não encontrado", HttpStatus.NOT_FOUND)
+    }
   }
   
   async create(dto: CreateQrCodeDTO): Promise<QrCodes> {

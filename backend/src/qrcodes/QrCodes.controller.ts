@@ -14,6 +14,11 @@ export class QrcodesController {
         return await this.qrcodesService.findAll();
     }
 
+    @Get(':hash')
+    async findByHash(@Param('hash') hash: string) {
+        return await this.qrcodesService.findByHash(hash)
+    }
+
     @Post(':id')
     async create(@Param('id') idmesa: number,
                  @Body('nome') nome: string) {
