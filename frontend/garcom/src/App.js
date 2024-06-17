@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import { Alert } from "react-bootstrap";
 import { login, getQrs, getMesas } from "./servidor";
 import { socket } from "./ConexaoMesa/conexaoWebScoket";
 import MesaCard from "./componentes/MesaCard";
@@ -10,6 +11,7 @@ export default function App() {
   const [accType, setAccType] = useState(0);
   const [qrs, setQrs] = useState([]);
   const [mesas, setMesas] = useState([]);
+  const [alertNum, setAlertNum] = useState(0);
   
   async function handleLogin(event) {
     event.preventDefault();
@@ -22,22 +24,15 @@ export default function App() {
       setMesas((await getMesas()).data);
       setSuccess(json.nome);
       setAccType(json.tipoConta.data[0])
+      socket.connect()
     } else {
       setError(json.message);
     }
   }
 
-  async function conexaoMesa() {
-    socket.connect();
-  }
-
   socket.on("msgToGarcom", (message) => {
-    alert(message);
+    setAlertNum(message)
   });
-
-  async function desconectaMesa() {
-    socket.disconnect();
-  }
 
   function forMesas(mesas, qrs) {
     // besteira
@@ -60,6 +55,11 @@ export default function App() {
       <div className="container mx-auto align-items-center text-center">
         <h1 className="m-5">Olá, {success}!</h1>
         {!!accType && <h2 className="m-4">Você tem privilégios de administração.</h2>}
+        { !!alertNum &&
+          <Alert variant="warning" dismissible onHide={setAlertNum(0)}>
+            Mesa {alertNum} solicita atendimento
+          </Alert>
+        }
         { forMesas(mesas, qrs) }
       </div>
     );

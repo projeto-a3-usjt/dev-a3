@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { delByMesa, newQr } from "../servidor";
 import { QRCode } from "react-qr-code"
-import { Button, CloseButton, FormControl, InputGroup, Modal } from "react-bootstrap"
+import { Button, CloseButton, FormControl, InputGroup, Modal, Alert } from "react-bootstrap"
 import React, { useState, useRef } from "react";
 
 function QrCodeEntry({ nome, hash }) {
@@ -33,7 +33,7 @@ function QrCodeEntry({ nome, hash }) {
   )
 }
 
-export default function MesaCard({ numMesa, qrArray }) {
+export default function MesaCard({ numMesa, qrArray, isAlerted }) {
 
   const [qrs, setQrs] = useState(JSON.parse(qrArray))
   
@@ -53,7 +53,7 @@ export default function MesaCard({ numMesa, qrArray }) {
     await delByMesa(numMesa)
     setQrs([])
   }
-  
+
   return (
     <div className="card mx-auto w-100 m-4">
       <div className="card-header d-flex justify-content-between">Mesa {numMesa} <CloseButton onClick={handleWipe}/></div>
