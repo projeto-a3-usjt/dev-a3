@@ -6,10 +6,10 @@ export const socket = io(urlWebSocket, {
   reconnection: false,
 });
 
-export async function connectWebSocket() {
+export async function connectWebSocket(mesa) {
   try {
     socket.connect();
-    socket.emit("mesa01", "Cliente Chamando na Mesa 01");
+    socket.emit("mesas", mesa);
   } catch (e:any) {
     alert("Erro ao Chamar atendente!");
   }

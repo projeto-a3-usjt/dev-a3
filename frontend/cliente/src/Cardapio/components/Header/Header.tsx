@@ -7,6 +7,10 @@ import RestaurantLogo from "../../../media/img/R.png";
 function Header({dados}): ReactElement {
   const NavBar = styled.nav``;
 
+  function handleChamaGarcom() {
+    connectWebSocket(dados.mesa)
+  }
+
   return (
     <>
       <div
@@ -38,7 +42,7 @@ function Header({dados}): ReactElement {
             <button
               className="btn btn-warning border border-dark"
               style={{ fontSize: "14px" }}
-              onClick={ connectWebSocket }
+              onClick={ handleChamaGarcom }
             >
               Chamar Garçom
             </button>
