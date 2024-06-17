@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert } from "react-bootstrap";
 import { login, getQrs, getMesas } from "./servidor";
 import { socket } from "./ConexaoMesa/conexaoWebSocket";
@@ -12,7 +12,7 @@ export default function App() {
   const [qrs, setQrs] = useState([]);
   const [mesas, setMesas] = useState([]);
   const [alertNum, setAlertNum] = useState(0);
-  
+
   async function handleLogin(event) {
     event.preventDefault();
     let form = event.nativeEvent.target;
@@ -24,15 +24,12 @@ export default function App() {
       setMesas((await getMesas()).data);
       setSuccess(json.nome);
       setAccType(json.tipoConta.data[0])
-      socket.connect()
+      socket.connect();
+      socket.on("msgToGarcom", (message) => setAlertNum(message));
     } else {
       setError(json.message);
     }
   }
-
-  socket.on("msgToGarcom", (message) => {
-    setAlertNum(message)
-  });
 
   function forMesas(mesas, qrs) {
     // besteira
@@ -56,9 +53,9 @@ export default function App() {
         <h1 className="m-5">Olá, {success}!</h1>
         {!!accType && <h2 className="m-4">Você tem privilégios de administração.</h2>}
         { !!alertNum &&
-          <Alert variant="warning" dismissible onHide={setAlertNum(0)}>
+          <Alert variant="warning" dismissible onHide={() => setAlertNum(0)}>
             Mesa {alertNum} solicita atendimento
-          </Alert>
+          </Alert>          
         }
         { forMesas(mesas, qrs) }
       </div>
